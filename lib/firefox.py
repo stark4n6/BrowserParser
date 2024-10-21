@@ -66,8 +66,12 @@ def parse_favicons(database: str):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_pages_w_icons")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_pages_w_icons")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["page_url"])
     for entry in entries:
@@ -110,8 +114,12 @@ def parse_cookies(database: str):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_cookies")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_cookies")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
         ["name", "value", "host", "expiry", "lastAccessed", "creationTime"]
@@ -139,8 +147,12 @@ def parse_formhistory(database: str):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_formhistory")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_formhistory")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
         ["fieldname", "value", "timesUsed", "firstUsed", "lastUsed"]
@@ -167,8 +179,12 @@ def parse_perms(database: str):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_perms")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_perms")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["origin", "type", "expireTime", "modificationTime"])
     for entry in entries:
@@ -192,8 +208,12 @@ def parse_bookmarks(database: str):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_bookmarks")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_bookmarks")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["title", "dateAdded", "lastModified"])
     for entry in entries:
@@ -215,8 +235,12 @@ def parse_inputhistory(database: str, places_dict: dict):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_inputhistory")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_inputhistory")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["places_id", "url", "input"])
     for entry in entries:
@@ -233,8 +257,12 @@ def parse_history(database: str, places_dict: dict):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_places")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_places")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
         [
@@ -290,8 +318,12 @@ def enrich_history(database: str, places_dict: dict):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_historyvisits")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_historyvisits")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     # Defined in the source code
     # Link: https://searchfox.org/mozilla-central/source/toolkit/components/places/History.sys.mjs Line 762
@@ -322,8 +354,12 @@ def parse_history_metadata(database: str, places_dict: dict):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_places_metadata")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_places_metadata")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
         [
@@ -397,8 +433,12 @@ def parse_downloads(database: str, places_dict: dict):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM moz_annos")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM moz_annos")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     entries.sort(key=itemgetter(1))
     output = []
     # Write names of fields

@@ -32,8 +32,12 @@ def parse_downloads(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM downloads")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM downloads")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
             [
@@ -77,8 +81,12 @@ def parse_history(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM urls")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM urls")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["url", "title", "visit_count", "last_visit_time"])
 
@@ -100,8 +108,12 @@ def parse_visited_links(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM visited_links")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM visited_links")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["top_level_url", "frame_url", "visit_count"])
 
@@ -118,8 +130,12 @@ def parse_searches(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM keyword_search_terms")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM keyword_search_terms")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["term", "normalized_term"])
 
@@ -136,8 +152,12 @@ def parse_favicons(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM favicons")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM favicons")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(["url"])
     for entry in entries:
@@ -154,8 +174,12 @@ def parse_cookies(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM cookies")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM cookies")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
         [
@@ -194,8 +218,12 @@ def parse_shortcuts(database):
     connection = connect_database(database)
     if not connection:
         return None
-    cursor = connection.execute("SELECT * FROM omni_box_shortcuts")
-    entries = cursor.fetchall()
+    try:
+        cursor = connection.execute("SELECT * FROM omni_box_shortcuts")
+        entries = cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return 0
     output = []
     output.append(
         [
