@@ -1,5 +1,7 @@
 import csv
 import json
+from tabulate import tabulate
+import datetime
 
 
 class outputWriter:
@@ -49,3 +51,25 @@ class outputWriter:
         # Write updated JSON to file:
         with open(f"{self.filename}_{datatype}.json", "w", encoding="UTF-8") as file:
             json.dump(existing_json, file, indent=4)
+
+    def write_html(self, datatype: str, content: list):
+        # content[0] are the headers
+        headers = content.pop(0)
+        # Use tabulate to generate the HTML for the table body
+        table_html = tabulate(content, headers, tablefmt="html")
+
+        # Load the HTML template from the file
+        with open("lib/template.html", "r", encoding="utf-8") as template:
+            html_template = template.read()
+        iso_time = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        # Insert the generated table into the template
+        html_template = html_template.replace("{{ artifact }}", datatype)
+        html_template = html_template.replace("{{ user }}", self.user)
+        html_template = html_template.replace("{{ browser }}", self.browser)
+        html_template = html_template.replace("{{ date }}", iso_time)
+        final_html = html_template.replace("{{ table }}", table_html)
+        
+        with open(f"{self.filename}_{datatype}.html", "w", encoding="UTF-8") as file:
+            file.write(final_html)
+
+
