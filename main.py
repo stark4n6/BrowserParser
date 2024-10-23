@@ -52,6 +52,7 @@ if __name__ == "__main__":
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--csv", action="store_true", help="Output in CSV format")
     group.add_argument("--json", action="store_true", help="Output in JSON format")
+    group.add_argument("--html", action="store_true", help="Output in HTML format")
     
     # Add arguments to the group
     args = parser.parse_args()
