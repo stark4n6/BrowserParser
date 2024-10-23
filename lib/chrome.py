@@ -75,6 +75,8 @@ def parse_downloads(database):
         chromeWriter.write_csv("downloads", output)
     if out.json:
         chromeWriter.write_json("downloads", output)
+    if out.html:
+        chromeWriter.write_html("downloads", output)
 
 
 def parse_history(database):
@@ -102,6 +104,8 @@ def parse_history(database):
         chromeWriter.write_csv("history", output)
     if out.json:
         chromeWriter.write_json("history", output)
+    if out.html:
+        chromeWriter.write_html("history", output)
 
 
 def parse_visited_links(database):
@@ -124,6 +128,8 @@ def parse_visited_links(database):
         chromeWriter.write_csv("visited_links", output)
     if out.json:
         chromeWriter.write_json("visited_links", output)
+    if out.html:
+        chromeWriter.write_html("visited_links", output)
 
 
 def parse_searches(database):
@@ -145,6 +151,8 @@ def parse_searches(database):
         chromeWriter.write_csv("searches", output)
     if out.json:
         chromeWriter.write_json("searches", output)
+    if out.html:
+        chromeWriter.write_html("searches", output)
 
 
 def parse_favicons(database):
@@ -166,6 +174,8 @@ def parse_favicons(database):
         chromeWriter.write_csv("favicons", output)
     if out.json:
         chromeWriter.write_json("favicons", output)
+    if out.html:
+        chromeWriter.write_html("favicons", output)
 
 
 def parse_cookies(database):
@@ -210,6 +220,8 @@ def parse_cookies(database):
         chromeWriter.write_csv("cookies", output)
     if out.json:
         chromeWriter.write_json("cookies", output)
+    if out.html:
+        chromeWriter.write_html("cookies", output)
 
 
 def parse_shortcuts(database):
@@ -250,6 +262,8 @@ def parse_shortcuts(database):
         chromeWriter.write_csv("shortcuts", output)
     if out.json:
         chromeWriter.write_json("shortcuts", output)
+    if out.html:
+        chromeWriter.write_html("shortcuts", output)
 
 
 def parse_chromium_notifications(database):
@@ -300,6 +314,8 @@ def parse_chromium_notifications(database):
                 chromeWriter.write_csv("notifications", output)
             if out.json:
                 chromeWriter.write_json("notifications", output)
+            if out.html:
+                chromeWriter.write_html("notifications", output)
         except Exception as e:
             print(e)
             return 0
@@ -326,6 +342,8 @@ def parse_extensions(path):
         chromeWriter.write_csv("extensions", output)
     if out.json:
         chromeWriter.write_json("extensions", output)
+    if out.html:
+        chromeWriter.write_html("extensions", output)
 
 
 def parse_chrome_data(user, directory, output, args):
