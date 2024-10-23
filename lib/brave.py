@@ -75,6 +75,8 @@ def parse_downloads(database):
         braveWriter.write_csv("downloads", output)
     if out.json:
         braveWriter.write_json("downloads", output)
+    if out.html:
+        braveWriter.write_html("downloads", output)
 
 
 def parse_history(database):
@@ -102,6 +104,8 @@ def parse_history(database):
         braveWriter.write_csv("history", output)
     if out.json:
         braveWriter.write_json("history", output)
+    if out.html:
+        braveWriter.write_html("history", output)
 
 
 def parse_visited_links(database):
@@ -124,6 +128,8 @@ def parse_visited_links(database):
         braveWriter.write_csv("visited_links", output)
     if out.json:
         braveWriter.write_json("visited_links", output)
+    if out.html:
+        braveWriter.write_html("visited_links", output)
 
 
 def parse_searches(database):
@@ -146,6 +152,8 @@ def parse_searches(database):
         braveWriter.write_csv("searches", output)
     if out.json:
         braveWriter.write_json("searches", output)
+    if out.html:
+        braveWriter.write_html("searches", output)
 
 
 def parse_favicons(database):
@@ -167,6 +175,8 @@ def parse_favicons(database):
         braveWriter.write_csv("favicons", output)
     if out.json:
         braveWriter.write_json("favicons", output)
+    if out.html:
+        braveWriter.write_html("favicons", output)
 
 
 def parse_cookies(database):
@@ -211,6 +221,8 @@ def parse_cookies(database):
         braveWriter.write_csv("cookies", output)
     if out.json:
         braveWriter.write_json("cookies", output)
+    if out.html:
+        braveWriter.write_html("cookies", output)
 
 
 def parse_shortcuts(database):
@@ -251,6 +263,8 @@ def parse_shortcuts(database):
         braveWriter.write_csv("shortcuts", output)
     if out.json:
         braveWriter.write_json("shortcuts", output)
+    if out.html:
+        braveWriter.write_html("shortcuts", output)
 
 
 def parse_chromium_notifications(database):
@@ -301,6 +315,8 @@ def parse_chromium_notifications(database):
                 braveWriter.write_csv("notifications", output)
             if out.json:
                 braveWriter.write_json("notifications", output)
+            if out.html:
+                braveWriter.write_html("notifications", output)
         except Exception as e:
             print(e)
 
@@ -322,6 +338,8 @@ def parse_extensions(path):
         braveWriter.write_csv("extensions", output)
     if out.json:
         braveWriter.write_json("extensions", output)
+    if out.html:
+        braveWriter.write_html("extensions", output)
 
 
 def parse_brave_data(user, directory, output, args):
