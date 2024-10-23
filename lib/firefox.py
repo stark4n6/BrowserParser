@@ -80,6 +80,8 @@ def parse_favicons(database: str):
         firefoxWriter.write_csv("favicon", output)
     if out.json:
         firefoxWriter.write_json("favicon", output)
+    if out.html:
+        firefoxWriter.write_html("favicon", output)
 
 
 def parse_extensions(database: str):
@@ -107,6 +109,8 @@ def parse_extensions(database: str):
             firefoxWriter.write_csv("extensions", output)
         if out.json:
             firefoxWriter.write_json("extensions", output)
+        if out.html:
+            firefoxWriter.write_html("extensions", output)
 
 
 def parse_cookies(database: str):
@@ -139,6 +143,8 @@ def parse_cookies(database: str):
         firefoxWriter.write_csv("cookies", output)
     if out.json:
         firefoxWriter.write_json("cookies", output)
+    if out.html:
+        firefoxWriter.write_html("cookies", output)
 
 
 def parse_formhistory(database: str):
@@ -171,6 +177,8 @@ def parse_formhistory(database: str):
         firefoxWriter.write_csv("formhistory", output)
     if out.json:
         firefoxWriter.write_json("formhistory", output)
+    if out.html:
+        firefoxWriter.write_html("formhistory", output)
 
 
 def parse_perms(database: str):
@@ -200,6 +208,8 @@ def parse_perms(database: str):
         firefoxWriter.write_csv("permissions", output)
     if out.json:
         firefoxWriter.write_json("permissions", output)
+    if out.html:
+        firefoxWriter.write_html("permissions", output)
 
 
 def parse_bookmarks(database: str):
@@ -228,6 +238,8 @@ def parse_bookmarks(database: str):
         firefoxWriter.write_csv("bookmarks", output)
     if out.json:
         firefoxWriter.write_json("bookmarks", output)
+    if out.html:
+        firefoxWriter.write_html("bookmarks", output)
 
 
 def parse_inputhistory(database: str, places_dict: dict):
@@ -249,6 +261,8 @@ def parse_inputhistory(database: str, places_dict: dict):
         firefoxWriter.write_csv("inputhistory", output)
     if out.json:
         firefoxWriter.write_json("inputhistory", output)
+    if out.html:
+        firefoxWriter.write_html("inputhistory", output)
 
 
 def parse_history(database: str, places_dict: dict):
@@ -310,6 +324,8 @@ def parse_history(database: str, places_dict: dict):
         firefoxWriter.write_csv("history", output)
     if out.json:
         firefoxWriter.write_json("history", output)
+    if out.html:
+        firefoxWriter.write_html("history", output)
 
 
 def enrich_history(database: str, places_dict: dict):
@@ -347,6 +363,8 @@ def enrich_history(database: str, places_dict: dict):
         firefoxWriter.write_csv("historyvisits", output)
     if out.json:
         firefoxWriter.write_json("historyvisits", output)
+    if out.html:
+        firefoxWriter.write_html("historyvisits", output)
 
 
 def parse_history_metadata(database: str, places_dict: dict):
@@ -406,6 +424,8 @@ def parse_history_metadata(database: str, places_dict: dict):
         firefoxWriter.write_csv("metadata", output)
     if out.json:
         firefoxWriter.write_json("metadata", output)
+    if out.html:
+        firefoxWriter.write_html("metadata", output)
 
 
 def parse_logins(database: str):
@@ -426,6 +446,8 @@ def parse_logins(database: str):
             firefoxWriter.write_csv("logins", output)
         if out.json:
             firefoxWriter.write_json("logins", output)
+        if out.html:
+            firefoxWriter.write_html("logins", output)
 
 
 def parse_downloads(database: str, places_dict: dict):
@@ -461,6 +483,8 @@ def parse_downloads(database: str, places_dict: dict):
         firefoxWriter.write_csv("downloads", output)
     if out.json:
         firefoxWriter.write_json("downloads", output)
+    if out.html:
+        firefoxWriter.write_html("downloads", output)
 
 
 def parse_notifications(database: str):
@@ -487,3 +511,5 @@ def parse_notifications(database: str):
             firefoxWriter.write_csv("notifications", output)
         if out.json:
             firefoxWriter.write_json("notifications", output)
+        if out.html:
+            firefoxWriter.write_html("notifications", output)
