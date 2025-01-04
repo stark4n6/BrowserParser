@@ -332,7 +332,10 @@ def parse_extensions(path):
             break
         print(os.listdir(f"{path}/{extension}"))
         id = os.listdir(f"{path}/{extension}")[0]
-        f = open(f"{path}/{extension}/{id}/manifest.json", "r")
+        manifest_path = f"{path}/{extension}/{id}/manifest.json"
+        if not os.path.exists(manifest_path):
+            return None
+        f = open(manifest_path, "r")
         manifest = json.loads(f.read())
         try:
             output.append([manifest.get("name", "No name specified"), manifest.get("author", "No author specified"), manifest.get("manifest_version", "No version specified"), manifest.get("description", "No description specified"), manifest.get("developer", "No developer specified")])
